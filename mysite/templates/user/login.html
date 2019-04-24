@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf8">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <link rel="shortcut icon" href="/static/media/favicon.ico">
+	<script type="text/javascript">
+		function $(id) {return document.getElementById(id)	}
+		function check(){
+			var user = $("user").value
+			var pwd1 = $("pwd1").value
+			var pwd2 = $("pwd2").value
+
+			if (user == "" || pwd1 == "") {
+				alert("输入的用户名或密码不能为空")
+				return false
+			}
+			if (pwd1.length< 6) {
+				alert("密码不能小于六位数！")
+				return false
+			}
+			if (pwd1 != pwd2) {
+				alert("两次密码输入必须一致")
+				return false 
+			}
+		}
+	</script>
+	<style type="text/css">
+		fieldset{width: 350px;background:pink;height: 200px;margin: 150px 400px}
+		button{margin: 0; padding: 0}
+
+
+	</style>
+</head>
+<body bgcolor="#7EC0EE">
+<form>
+	<fieldset>
+		<legend align="center">用户登录</legend></br>
+		<label>用户名：</label>
+		<input type="text"  id="user">(请输入用户名)</br></br>
+		<label>密&nbsp&nbsp码：</label>
+		<input type="password"  id="pwd1">（输入密码）<br><br>
+		<label>确认密码</label>
+		<input type="password"  id="pwd2">（确认密码）<br><br>
+		<input type="button" name="" value="提交" onclick="return check()">
+		<input type="button" name="" value="重置" onclick="clear()">
+	</fieldset>
+</form>
+</body>
+
+</html>
